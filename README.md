@@ -1,11 +1,14 @@
 ## Sperm equation fits
 Source code accompanying chapter 9 of book "Dyneins: Structure, Biology and Disease", edited by SM King.
+
 Title: "Computational modeling of dynein activity and the generation of flagellar beating waveforms"
+
 Authors: Veikko F. Geyer (1), Pablo Sartori (2), Frank Jülicher (3), Jonathon Howard (1)
+
 Affiliations: (1) Yale University, New Haven, CT, United States; (2) Laboratory of Living Matter and Center for Studies in Physics and Biology, The Rockefeller University, New York, NY, United States; (3) Max Planck Institute for the Physics of Complex Systems, Dresden, Germany.
 
 ## Description
-This program solves the equation of motion of a flagellum, see Sartori et al,. 2016 for details.
+This program solves the equation of motion of a flagellum, see [Sartori et al, 2016] for details.
 
 Use Compute_example_beats.m to explore three different examples:
 
