@@ -1,4 +1,4 @@
-## Sperm equation fits
+# Sperm equation fits
 Source code accompanying chapter 9 of book "Dyneins: Structure, Biology and Disease", edited by SM King.
 
 Title: "Computational modeling of dynein activity and the generation of flagellar beating waveforms"
@@ -7,34 +7,44 @@ Authors: Veikko F. Geyer (1), Pablo Sartori (2), Frank Jülicher (3), Jonathon 
 
 Affiliations: (1) Yale University, New Haven, CT, United States; (2) Laboratory of Living Matter and Center for Studies in Physics and Biology, The Rockefeller University, New York, NY, United States; (3) Max Planck Institute for the Physics of Complex Systems, Dresden, Germany.
 
+## Introduction
+This repository contains programs that solve the equation of motion of a flagellum, see [Sartori et al, 2016] for details. Use Compute_example_beats.m to explore three different examples:
+
+Example 1 Bull Sperm, sliding control, clamped base, [Riedel-Kruse et al, 2007]
+
+Example 2 Chlamydomonas, dynamic curvature control, free ends, [Sartori et al, 2016]
+
+Example 3 Chlamydomonas, curvature control, free ends, [Sartori et al, 2016]
+
+
 ## Description
-This program solves the equation of motion of a flagellum, see [Sartori et al, 2016] for details.
-
-Use Compute_example_beats.m to explore three different examples:
-
-	Example 1 Bull Sperm, sliding control, clamped base, Riedel Kruse et al,. 2007
-	Example 2 Chlamydomonas, dynamic curvature control, free ends, Sartori et al,. 2016
-	Example 3 Chlamydomonas, curvature control, free ends, Sartori et al,. 2016
-
-
 The functions that are called by the Compute_example_beats.m are:
 
-	parameters.m	(writes input parameters to global variables)
-			- parameter inputs can be changed in section (1) CHOOSE PARAMETERS, by editing the black numbers
-			- possible parameter settings are summarized in Table 3 in the book chapter
-			Note the units of the parameters!	
+`parameters.m`:	writes input parameters to global variables.
+	
+	- parameter inputs can be changed in section (1) CHOOSE PARAMETERS, by editing the black numbers
+	
+	- possible parameter settings are summarized in Table 3 in the book chapter
+	
+	- note the units of the parameters!	
 
-	bcmat.m		(solves the boundary value problem - calculates the matrix of coefficients for a pair of response coefficients)
-			- this function is used by solspace.m and beatmodes.m 
 
-	solspace.m	(calculates the determinant of the matrix of coefficients pairs of response coefficients (for a set region of the phase space), finds
-			the minima in the phase space)
-			- the range of the phase space that should be explored can be changed in section (2) EXPLORE PHASE-SPACE. 
-			Note the units of the parameters!
-			- The function takes as input vectors, giving the range of of the phase space to explore (xrange, yrange) and an option,
-			that allows for plotting the phase space (for off plots=0, for on plots=1) 
-			- The function outputs a structure called space, which contains the seeds, the local minima (red dots in figure 4, book chapter)
-			- solspace.m uses the functions extrema.m and extrema2, which are included at the end for the function
+`bcmat.m`: solves the boundary value problem - calculates the matrix of coefficients for a pair of response coefficients
+
+	- this function is used by solspace.m and beatmodes.m 
+
+
+`solspace.m`: calculates the determinant of the matrix of coefficients pairs of response coefficients (for a set region of the phase space), finds the minima in the phase space
+
+	- the range of the phase space that should be explored can be changed in section (2) EXPLORE PHASE-SPACE. 
+
+	- note the units of the parameters!
+
+	- The function takes as input vectors, giving the range of of the phase space to explore (xrange, yrange) and an option, that allows for plotting the phase space (for off plots=0, for on plots=1) 
+	
+	- The function outputs a structure called space, which contains the seeds, the local minima (red dots in figure 4, book chapter)
+	
+	- `solspace.m` uses the functions extrema.m and extrema2, which are included at the end for the function
 			
 
 	beatmodes.m	(calculates solutions)
