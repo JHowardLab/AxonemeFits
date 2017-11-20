@@ -1,4 +1,4 @@
-# Sperm equation fits
+# Axoneme fits
 Source code accompanying chapter 9 of book "Dyneins: Structure, Biology and Disease", edited by SM King.
 
 Title: "Computational modeling of dynein activity and the generation of flagellar beating waveforms"
