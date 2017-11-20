@@ -22,50 +22,36 @@ The functions that are called by the Compute_example_beats.m are:
 
 `parameters.m`:	writes input parameters to global variables.
 	
-	- parameter inputs can be changed in section (1) CHOOSE PARAMETERS, by editing the black numbers
-	
-	- possible parameter settings are summarized in Table 3 in the book chapter
-	
-	- note the units of the parameters!	
+* parameter inputs can be changed in section (1) CHOOSE PARAMETERS, by editing the black numbers	
+* possible parameter settings are summarized in Table 3 in the book chapter
+* note the units of the parameters!	
 
 
 `bcmat.m`: solves the boundary value problem - calculates the matrix of coefficients for a pair of response coefficients
-
-	- this function is used by solspace.m and beatmodes.m 
+* this function is used by solspace.m and beatmodes.m 
 
 
 `solspace.m`: calculates the determinant of the matrix of coefficients pairs of response coefficients (for a set region of the phase space), finds the minima in the phase space
-
-	- the range of the phase space that should be explored can be changed in section (2) EXPLORE PHASE-SPACE. 
-
-	- note the units of the parameters!
-
-	- The function takes as input vectors, giving the range of of the phase space to explore (xrange, yrange) and an option, that allows for plotting the phase space (for off plots=0, for on plots=1) 
-	
-	- The function outputs a structure called space, which contains the seeds, the local minima (red dots in figure 4, book chapter)
-	
-	- `solspace.m` uses the functions extrema.m and extrema2, which are included at the end for the function
+* the range of the phase space that should be explored can be changed in section (2) EXPLORE PHASE-SPACE. 
+* note the units of the parameters!
+* the function takes as input vectors, giving the range of of the phase space to explore (xrange, yrange) and an option, that allows for plotting the phase space (for off plots=0, for on plots=1) 
+* the function outputs a structure called space, which contains the seeds, the local minima (red dots in figure 4, book chapter)
+* `solspace.m` uses the functions extrema.m and extrema2, which are included at the end for the function
 			
 
 `beatmodes.m`: calculates solutions
-
-	- for each identified solution an error is calculated. By changing the parameter `err_tol`, solutions are either included or  excluded from display
-	
-	- the function takes as input the seeds, outputted by `solstice.m`
-	
-	- the function outputs a structure called solutions which contains the fields `(res, k, A, err, psi, seed)`
+* for each identified solution an error is calculated. By changing the parameter `err_tol`, solutions are either included or  excluded from display
+* the function takes as input the seeds, outputted by `solstice.m`
+* the function outputs a structure called solutions which contains the fields `(res, k, A, err, psi, seed)`
 
 
 `plot_phasespace.m`: plots the phase space, depicted in figure 4 of the book chapter
-
-	- the function takes as input space, solutions and err_tol 
+* the function takes as input space, solutions and err_tol 
 		
 		
 `plot_solution.m`: plots specific properties of individual solutions, depicted in figure 5 of the book chapter
-
-	- the function takes as input solutions, space.index and solution_number
-
-	-note: `solution_number` has to be set manually. It refers to the white circled numbers in the phase space plot (figure 4), which are the solutions. The reader has to pick a specific solution number that appears on the phase space plot 
+* the function takes as input solutions, space.index and `solution_number`
+* note: `solution_number` has to be set manually. It refers to the white circled numbers in the phase space plot (figure 4), which are the solutions. The reader has to pick a specific solution number that appears on the phase space plot 
 
 
 ## Example
